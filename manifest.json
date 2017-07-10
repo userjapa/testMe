@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+
+    "name": "TestMe",
+    "description": "Use this extension to fill your form só you don't have to lost time!",
+    "version": "1.0",
+
+    "browser_action": {
+        "default_icon": "thumbs-up.png",
+        "default_popup": "index.html"
+    },
+    "permissions": [
+        "tabs", 
+        "http://*/*",
+        "https://*/*"
+    ],
+    "web_accessible_resources": ["createScript.js"]
+    
+    
+}

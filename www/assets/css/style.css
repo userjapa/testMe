@@ -1,0 +1,42 @@
+html, body {
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    color: darkslateblue;
+    border: dashed;
+}
+
+body div {
+    text-align: center;
+    margin: auto;
+}
+
+h1 {
+    border: none none dashed none;
+}
+
+form div input, select {
+    margin: 1%;
+    width: 90%;
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid blue;
+    background: white;
+    font-size: 15px;
+}
+
+button {
+    width: 90%;
+    height: 30px;
+    border: 1px solid black !important;
+    border-radius: 10px;
+    background: rgba(15,255,15,0.75) !important;
+    font-size: 17px !important;
+}
