@@ -13,8 +13,5 @@
         "tabs", 
         "http://*/*",
         "https://*/*"
-    ],
-    "web_accessible_resources": ["createScript.js"]
-    
-    
+    ]  
 }
