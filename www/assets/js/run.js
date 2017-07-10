@@ -5,26 +5,28 @@ let serviceInput = require('./services/inputService.js'),
 var form = document.forms;
 
 const fill = () => {
-    try {
-        auth.verify(form, 'Form');
+    for (x in form) {
         try {
-            var inputs = form[0].getElementsByTagName('input');
-            var selects = form[0].getElementsByTagName('select');
-            auth.verify(inputs, 'INPUT');
-            serviceInput.insert(inputs);
-        } catch (err) {
-            alert(err.name + ": " + err.message);
-        }
-        if (selects.length > 0) {
+            auth.verify(form, 'Form');
             try {
-                serviceSelect.checkSelect(selects);
+                var inputs = form[x].getElementsByTagName('input');
+                var selects = form[x].getElementsByTagName('select');
+                auth.verify(inputs, 'INPUT');
+                serviceInput.insert(inputs);
             } catch (err) {
                 alert(err.name + ": " + err.message);
             }
-            console.log(inputs);
+            if (selects.length > 0) {
+                try {
+                    serviceSelect.checkSelect(selects);
+                } catch (err) {
+                    alert(err.name + ": " + err.message);
+                }
+                console.log(inputs);
+            }
+        } catch (err) {
+            alert(err.name + ": " + err.message);
         }
-    } catch (err) {
-        alert(err.name + ": " + err.message);
     }
-}   
+}
 fill();
