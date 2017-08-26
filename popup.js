@@ -3,4 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
     checkPageButton.addEventListener('click', function () {
         chrome.tabs.executeScript(null, {file: "fill.js"});
     }, false);
+    var checkInputeButton = document.getElementById('checkInput');
+    checkPageButton.addEventListener('click', function () {
+        chrome.tabs.executeScript(null, {file: "fill.js"});
+    }, false);
 }, false);

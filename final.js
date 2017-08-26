@@ -195,7 +195,8 @@ let serviceInput = __webpack_require__(2),
 
 var form = document.forms;
 
-const fill = () => {
+let fill = () => {
+  if (form.length > 0) {
     for (x in form) {
         try {
             auth.verify(form, 'Form');
@@ -219,8 +220,19 @@ const fill = () => {
             alert(err.name + ": " + err.message);
         }
     }
+  } else {
+    try {
+        var inputs = form[x].getElementsByTagName('input');
+        var selects = form[x].getElementsByTagName('select');
+        auth.verify(inputs, 'INPUT');
+        serviceInput.insert(inputs);
+    } catch (err) {
+        alert(err.name + ": " + err.message);
+    }
+  }
 }
-fill();
+fill()
+
 
 /***/ })
 /******/ ]);
